@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getComputerChoice(str) {
+        let answer = ["Камень!", "Ножницы!", "Бумага!"];
+        return answer[Math.floor(Math.random() * answer.length)];
+      }
+
+      function playRound(playerSelection, computerSelection) {
+        if (playerSelection === computerSelection) {
+          return "Ну ты выдал! Ничья!";
+        }
+        if (
+          (playerSelection === "камень" && computerSelection === "Ножницы!")||
+          (playerSelection === "ножницы" && computerSelection === "Бумага!")||
+          (playerSelection === "бумага" && computerSelection === "Камень!")
+        ) {
+          return "Что за тигр этот лев! Ты выиграл!";
+        } else {
+          return "Мдааа, этого пока на турниры не отправляем!";
+        }
+      }
+      
+      function game() {
+        let playerScore = 0;
+        let computerScore = 0;
+        const playerSelection = prompt("Ну давай, давай нападай!");
+        const computerSelection = getComputerChoice();
+
+        console.log(`Ты юзанул - ${playerSelection}`);
+        console.log(`Комп ответил: ${computerSelection}`);
+
+        const result = playRound(playerSelection, computerSelection);
+        console.log(result);
+      }
+
+      game();
+    </script>
+  </body>
+</html>
