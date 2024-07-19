@@ -3,44 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
   </head>
   <body>
-    <script>
-      function getComputerChoice(str) {
-        let answer = ["Камень!", "Ножницы!", "Бумага!"];
-        return answer[Math.floor(Math.random() * answer.length)];
-      }
 
-      function playRound(playerSelection, computerSelection) {
-        if (playerSelection === computerSelection) {
-          return "Ну ты выдал! Ничья!";
-        }
-        if (
-          (playerSelection === "камень" && computerSelection === "Ножницы!")||
-          (playerSelection === "ножницы" && computerSelection === "Бумага!")||
-          (playerSelection === "бумага" && computerSelection === "Камень!")
-        ) {
-          return "Что за тигр этот лев! Ты выиграл!";
-        } else {
-          return "Мдааа, этого пока на турниры не отправляем!";
-        }
-      }
-      
-      function game() {
-        let playerScore = 0;
-        let computerScore = 0;
-        const playerSelection = prompt("Ну давай, давай нападай!");
-        const computerSelection = getComputerChoice();
+    <div class="selections">
+      <button class="selection" data-selection="Камень">✊</button>
+      <button class="selection" data-selection="Ножницы">✌️</button>
+      <button class="selection" data-selection="Бумага">🤚</button>
+    </div>
+    <div class="results">
+      <div class="your-score" data-final-column-to>Твой счет ➡️
+        <span class="result-score" data-your-score>0</span>
+      </div>
+      <div class="computer-score" data-final-column>Счет Компьютера ➡️
+        <span class="result-score" data-computer-score>0</span>
+      </div>
+      <!--<div class="result-button loser">✌️</div>
+      <div class="result-button winner">✊</div>-->
+    </div>
+    <div class="playRound">
+      <span class="round-score" data-round-score> Выбирай с умом, на кон поставлено всё!
+      </span>
+    </div>
 
-        console.log(`Ты юзанул - ${playerSelection}`);
-        console.log(`Комп ответил: ${computerSelection}`);
-
-        const result = playRound(playerSelection, computerSelection);
-        console.log(result);
-      }
-
-      game();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

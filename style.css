@@ -1,0 +1,70 @@
+body {
+    background-color: #ccc;
+}
+
+.selections {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.selection {
+    background: none;
+    border: none;
+    border-radius: 250px;
+    outline: none;
+    cursor: pointer;
+    font-size: 3rem;
+    margin-top: 10px;
+    transition: 100ms;
+}
+
+.selection:hover {
+    scale: 1.4;
+    background: linear-gradient(to right, #a8e6cf, #dcedc1);
+}
+
+.results {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 20px;
+    gap: 40px;
+    font-size: 23px;
+}
+
+.result-score {
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.result-button {
+    text-align: center;
+    opacity: .5;
+    font-size: 1.5rem;
+    border-bottom: red;
+}
+
+.result-button.winner {
+    text-align: center;
+    opacity: 1;
+    font-size: 2.5rem;
+}
+
+
+.playRound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.round-score {
+    font-size: 1.5rem;
+}
+
+.your-score .computer-score {
+    margin: auto;
+}
+
